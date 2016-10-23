@@ -7,7 +7,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "precise64"
 
 	# Sync the www folder to the web server folder
-	config.vm.synced_folder "../www/", "/var/www"
+	config.vm.synced_folder "./", "/var/www"
 
 	# Change the hostname
 	config.vm.hostname = "vagrant"
