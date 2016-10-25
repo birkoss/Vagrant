@@ -8,10 +8,7 @@ Vagrant.configure("2") do |config|
 	# ubuntu/trusty64 = 14.04
 	# ubuntu/xenial64 = 16.04
 	# centos/7
-  config.vm.box = "ubuntu/trusty64"
-
-	# Sync the www folder to the web server folder
-#	config.vm.synced_folder "./", "/var/www/html"
+	config.vm.box = "ubuntu/trusty64"
 
 	# Change the hostname
 	config.vm.hostname = "vagrant"
@@ -47,8 +44,6 @@ Vagrant.configure("2") do |config|
 
 			echo -e "\n--- Allowing Apache override to all ---\n"
 			sed -i "s/AllowOverride None/AllowOverride All/g" /etc/apache2/apache2.conf
-
-
 		
 			# Remove the default Apache folder, and link ours
 			if [ ! -h /var/www/html ];
